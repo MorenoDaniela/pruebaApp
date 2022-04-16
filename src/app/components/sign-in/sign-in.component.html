@@ -46,7 +46,7 @@
         <div class="form-field d-flex align-items-center"> 
           <span class="fas fa-key"></span> 
           <input type="password" class="formControl" placeholder="Password" formControlName="Password" required>
-          <span class="text-danger" *ngIf="formulario.get('Contraseña')?.hasError('required') && formulario.get('Contraseña')?.touched">La contraseña es requerida.</span>
+          <span class="text-danger" *ngIf="formulario.get('Password')?.hasError('required') && formulario.get('Password')?.touched">La contraseña es requerida.</span>
          </div>  
         <!-- <input type="button" class="btn btnPrimary" value="Logueate" (click)="authService.SignIn(userName.value, userPassword.value)"> -->
         <ion-button color="primary" type="submit" shape="round" expand="block" [disabled]="formulario.invalid">Logueate</ion-button>

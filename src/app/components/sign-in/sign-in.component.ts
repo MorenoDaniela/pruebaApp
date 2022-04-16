@@ -11,6 +11,8 @@ export class SignInComponent implements OnInit {
   constructor(public authService: AuthService,public fb: FormBuilder,) { }
 
   ngOnInit(): void {
+    this.buildForm();
+    // this.validar(this.formulario);
   }
 
   LoguearConGoogle(){

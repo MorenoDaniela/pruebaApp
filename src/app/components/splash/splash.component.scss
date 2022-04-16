@@ -1,0 +1,16 @@
+ion-content{
+    --background:black;
+}
+
+.container{
+    -webkit-animation:rotate-scale-down 2s linear both;animation:rotate-scale-down 2s linear both;
+height: 100px;
+margin-top:60%;
+}
+
+.text-animated{
+    animation:tracking-in-expand-fwd-top .8s cubic-bezier(.215,.61,.355,1.000) both
+}
+.text-animated2{
+    animation:tracking-in-expand-fwd-top .8s cubic-bezier(.215,.61,.355,1.000) both
+}

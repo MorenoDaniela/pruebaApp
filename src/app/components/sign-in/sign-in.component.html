@@ -51,10 +51,13 @@
         <!-- <input type="button" class="btn btnPrimary" value="Logueate" (click)="authService.SignIn(userName.value, userPassword.value)"> -->
         <ion-button color="primary" type="submit" shape="round" expand="block" [disabled]="formulario.invalid">Logueate</ion-button>
     </form>
-    <ion-button color="success" shape="round" expand="block" (click)="LoguearConGoogle()">Log in con Google</ion-button>
+    <!-- <ion-button color="success" shape="round" expand="block" (click)="LoguearConGoogle()">Log in con Google</ion-button>
     
-    <ion-button routerLink="/forgot-password" shape="round" color="danger" expand="block">Olvidaste contraseña</ion-button>
-    <ion-button color="warning" shape="round" expand="block" routerLink="/register-user">Registrate</ion-button>
+    <ion-button color="danger" routerLink="/forgot-password" shape="round"  expand="block">Olvidaste contraseña</ion-button>
+    <ion-button color="warning" shape="round" expand="block" routerLink="/register-user">Registrate</ion-button> -->
+    <ion-button color="success" shape="round" expand="block" (click)="Sereneis()">Usuario 1</ion-button>
+    <ion-button color="danger" shape="round"  expand="block" (click)="Irina()">Usuario 2</ion-button>
+    <ion-button color="warning"shape="round" expand="block" (click)="Denu()">Usuario 3</ion-button>
     <!-- <div class="text-center fs-6" (click)="authService.GoogleAuth()">  <span class="text-warning">Log in con Google</span>  </div> -->
     <!-- <div class="text-center fs-6" >  <span class="text-danger"routerLink="/forgot-password">Olvidaste tu contraseña?</span> o  <span>No tenes una cuenta?<span class="redirect text-success" routerLink="/register-user"> Registrate</span></span> </div> -->
 </div>

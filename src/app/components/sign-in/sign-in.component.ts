@@ -36,4 +36,17 @@ export class SignInComponent implements OnInit {
     this.authService.SignIn(Email, Password);
     // this.toastr.showExito("Se registro el administrador correctamente","Tus datos fueron enviados con exito.",2000);
   }
+
+  Sereneis(){
+    this.formulario.controls['Email'].setValue('sereneidelys@gmail.com');
+    this.formulario.controls['Password'].setValue('123456');
+  }
+  Irina (){
+    this.formulario.controls['Email'].setValue('irinasassone@gmail.com');
+    this.formulario.controls['Password'].setValue('123456');
+  }
+  Denu(){
+    this.formulario.controls['Email'].setValue('celemorenok@gmail.com');
+    this.formulario.controls['Password'].setValue('123456');
+  }
 }

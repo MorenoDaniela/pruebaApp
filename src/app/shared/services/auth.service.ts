@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +17,8 @@ export class AuthService {
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone, // NgZone service to remove outside scope warning,
+    public toastCtrl: ToastController
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -31,6 +33,27 @@ export class AuthService {
       }
     });
   }
+  //toaster
+  presentToast(mensaje,duracion,position,color,clases) {
+    let toast = this.toastCtrl.create({
+      message: mensaje,
+      duration: duracion,
+      position: position,
+      cssClass: clases,
+      color:color,
+    }).then((toastData) => {
+      console.log(toastData);
+      toastData.present();
+    })
+    // .then((toastData)=>{
+    //   console.log(toastData)
+    //   this.toastCtrl.dismiss();
+    // })
+  
+    // toast.onDidDismiss();
+  
+    // toast.present();
+  }
   // Sign in with email/password
   async SignIn(email: string, password: string) {
     try {
@@ -38,10 +61,12 @@ export class AuthService {
         .signInWithEmailAndPassword(email, password);
       this.ngZone.run(() => {
         this.router.navigate(['dashboard']);
+        this.presentToast("Logueo exitoso.",2000,'middle','success','text-center');
       });
       this.SetUserData(result.user);
     } catch (error:any) {
-      window.alert(error.message);
+      console.log(error.message);
+      this.presentToast('Contraseña o email invalidos, chequee los datos ingresados.',2000,'middle','danger','text-center');
     }
   }
   // Sign up with email/password
